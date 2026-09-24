@@ -142,6 +142,8 @@ input:focus-visible,select:focus-visible{outline-offset:1px}
 .foot p strong{font-family:var(--serif);font-weight:400;font-size:1.2rem;color:var(--green-deep);display:block}
 .foot a{margin-left:auto;color:var(--ink);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .foot a svg{width:22px;height:22px;fill:currentColor}
+.map-frame{position:relative;width:100%;padding-top:56%;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 30px -22px rgba(46,76,55,.6)}
+.map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* Botón flotante */
 .float-wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:grid;place-items:center;
@@ -182,6 +184,7 @@ input:focus-visible,select:focus-visible{outline-offset:1px}
   <nav class="nav" aria-label="Principal">
     <a href="#servicios">Servicios</a>
     <a href="#agendar">Agendar cita</a>
+    <a href="#ubicacion">Ubicación</a>
   </nav>
 </header>
 
@@ -342,6 +345,15 @@ input:focus-visible,select:focus-visible{outline-offset:1px}
       <button class="btn btn-wa" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar por WhatsApp</button>
       <p class="note" id="msg" role="status">Tu cita queda confirmada cuando el salón te responda en WhatsApp.</p>
     </form>
+  </section>
+
+  <section class="panel" id="ubicacion" aria-labelledby="t-ubicacion">
+    <h2 id="t-ubicacion">Cómo llegar</h2>
+    <p class="lead">Urdesa Central, Calle 6ta #411 entre Dátiles y Av. Las Lomas, Guayaquil.</p>
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=Urdesa%20Central%2C%20Calle%206ta%20%23411%20entre%20D%C3%A1tiles%20y%20Av.%20Las%20Lomas%2C%20Guayaquil%2C%20Ecuador&output=embed" title="Ubicación de Samy Beauty Center en el mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+    <a class="btn btn-line" style="margin-top:16px" href="https://www.google.com/maps/search/?api=1&query=Urdesa%20Central%2C%20Calle%206ta%20%23411%20entre%20D%C3%A1tiles%20y%20Av.%20Las%20Lomas%2C%20Guayaquil%2C%20Ecuador" target="_blank" rel="noopener">Abrir en Google Maps</a>
   </section>
 
   <footer class="panel foot">
